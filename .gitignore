@@ -112,7 +112,7 @@ coverage_percent.txt
 linux-coverage-build
 linux-build
 win32-build
-test/
+
 test/config.ini
 test/cache/*
 xbuild_scripts
