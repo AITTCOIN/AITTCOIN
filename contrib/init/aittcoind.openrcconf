@@ -1,0 +1,33 @@
+# /etc/conf.d/aittcoind: config file for /etc/init.d/aittcoind
+
+# Config file location
+#AITTCOIND_CONFIGFILE="/etc/aittcoin/aittcoin.conf"
+
+# What directory to write pidfile to?  (created and owned by $AITTCOIND_USER)
+#AITTCOIND_PIDDIR="/var/run/aittcoind"
+
+# What filename to give the pidfile
+#AITTCOIND_PIDFILE="${AITTCOIND_PIDDIR}/aittcoind.pid"
+
+# Where to write aittcoind data (be mindful that the blockchain is large)
+#AITTCOIND_DATADIR="/var/lib/aittcoind"
+
+# User and group to own aittcoind process
+#AITTCOIND_USER="aittcoin"
+#AITTCOIND_GROUP="aittcoin"
+
+# Path to aittcoind executable
+#AITTCOIND_BIN="/usr/bin/aittcoind"
+
+# Nice value to run aittcoind under
+#AITTCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+#AITTCOIND_OPTS=""
+
+# The timeout in seconds OpenRC will wait for aittcoind to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+AITTCOIND_SIGTERM_TIMEOUT=60

@@ -1,0 +1,92 @@
+#!/sbin/runscript
+
+# backward compatibility for existing gentoo layout 
+#
+if [ -d "/var/lib/aittcoin/.aittcoin" ]; then
+	AITTCOIND_DEFAULT_DATADIR="/var/lib/aittcoin/.aittcoin"
+else
+	AITTCOIND_DEFAULT_DATADIR="/var/lib/aittcoind"
+fi
+
+AITTCOIND_CONFIGFILE=${AITTCOIND_CONFIGFILE:-/etc/aittcoin/aittcoin.conf}
+AITTCOIND_PIDDIR=${AITTCOIND_PIDDIR:-/var/run/aittcoind}
+AITTCOIND_PIDFILE=${AITTCOIND_PIDFILE:-${AITTCOIND_PIDDIR}/aittcoind.pid}
+AITTCOIND_DATADIR=${AITTCOIND_DATADIR:-${AITTCOIND_DEFAULT_DATADIR}}
+AITTCOIND_USER=${AITTCOIND_USER:-${AITTCOIN_USER:-aittcoin}}
+AITTCOIND_GROUP=${AITTCOIND_GROUP:-aittcoin}
+AITTCOIND_BIN=${AITTCOIND_BIN:-/usr/bin/aittcoind}
+AITTCOIND_NICE=${AITTCOIND_NICE:-${NICELEVEL:-0}}
+AITTCOIND_OPTS="${AITTCOIND_OPTS:-${AITTCOIN_OPTS}}"
+
+name="AITTCoin Core Daemon"
+description="AITTCoin cryptocurrency P2P network daemon"
+
+command="/usr/bin/aittcoind"
+command_args="-pid=\"${AITTCOIND_PIDFILE}\" \
+		-conf=\"${AITTCOIND_CONFIGFILE}\" \
+		-datadir=\"${AITTCOIND_DATADIR}\" \
+		-daemon \
+		${AITTCOIND_OPTS}"
+
+required_files="${AITTCOIND_CONFIGFILE}"
+start_stop_daemon_args="-u ${AITTCOIND_USER} \
+			-N ${AITTCOIND_NICE} -w 2000"
+pidfile="${AITTCOIND_PIDFILE}"
+
+# The retry schedule to use when stopping the daemon. Could be either
+# a timeout in seconds or multiple signal/timeout pairs (like
+# "SIGKILL/180 SIGTERM/300")
+retry="${AITTCOIND_SIGTERM_TIMEOUT}"
+
+depend() {
+	need localmount net
+}
+
+# verify
+# 1) that the datadir exists and is writable (or create it)
+# 2) that a directory for the pid exists and is writable
+# 3) ownership and permissions on the config file
+start_pre() {
+	checkpath \
+	-d \
+	--mode 0750 \
+	--owner "${AITTCOIND_USER}:${AITTCOIND_GROUP}" \
+	"${AITTCOIND_DATADIR}"
+
+	checkpath \
+	-d \
+	--mode 0755 \
+	--owner "${AITTCOIND_USER}:${AITTCOIND_GROUP}" \
+	"${AITTCOIND_PIDDIR}"
+
+	checkpath -f \
+	-o ${AITTCOIND_USER}:${AITTCOIND_GROUP} \
+	-m 0660 \
+	${AITTCOIND_CONFIGFILE}
+
+	checkconfig || return 1
+}
+
+checkconfig()
+{
+	if ! grep -qs '^rpcpassword=' "${AITTCOIND_CONFIGFILE}" ; then
+		eerror ""
+		eerror "ERROR: You must set a secure rpcpassword to run aittcoind."
+		eerror "The setting must appear in ${AITTCOIND_CONFIGFILE}"
+		eerror ""
+		eerror "This password is security critical to securing wallets "
+		eerror "and must not be the same as the rpcuser setting."
+		eerror "You can generate a suitable random password using the following "
+		eerror "command from the shell:"
+		eerror ""
+		eerror "bash -c 'tr -dc a-zA-Z0-9 < /dev/urandom | head -c32 && echo'"
+		eerror ""
+		eerror "It is recommended that you also set alertnotify so you are "
+		eerror "notified of problems:"
+		eerror ""
+		eerror "ie: alertnotify=echo %%s | mail -s \"AITTCoin Alert\"" \
+			"admin@foo.com"
+		eerror ""
+		return 1
+	fi
+}

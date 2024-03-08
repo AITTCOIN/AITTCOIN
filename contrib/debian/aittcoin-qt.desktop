@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=AITTCoin Core
+Comment=Connect to the AITTCoin P2P Network
+Comment[de]=Verbinde mit dem AITTCoin peer-to-peer Netzwerk
+Comment[fr]=AITTCoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=AITTCoin, eşten eşe kriptografik sanal para birimi
+Exec=aittcoin-qt %u
+Terminal=false
+Type=Application
+Icon=aittcoin128
+MimeType=x-scheme-handler/aittcoin;
+Categories=Office;Finance;

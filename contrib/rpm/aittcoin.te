@@ -1,0 +1,81 @@
+policy_module(aittcoin, 1.100.1)
+
+########################################
+#
+# Declarations
+#
+
+type aittcoin_t;
+type aittcoin_exec_t;
+init_daemon_domain(aittcoin_t, aittcoin_exec_t)
+
+permissive aittcoin_t;
+
+type aittcoin_initrc_exec_t;
+init_script_file(aittcoin_initrc_exec_t)
+
+type aittcoin_conf_t;
+files_type(aittcoin_conf_t)
+
+type aittcoin_var_lib_t;
+files_type(aittcoin_var_lib_t)
+
+type aittcoin_var_run_t;
+files_type(aittcoin_var_run_t)
+
+type aittcoin_port_t;
+corenet_port(aittcoin_port_t)
+
+########################################
+#
+# aittcoin local policy
+#
+allow aittcoin_t self:process { fork };
+
+allow aittcoin_t self:fifo_file rw_fifo_file_perms;
+allow aittcoin_t self:unix_stream_socket create_stream_socket_perms;
+
+manage_dirs_pattern(aittcoin_t, aittcoin_conf_t, aittcoin_conf_t)
+manage_files_pattern(aittcoin_t, aittcoin_conf_t, aittcoin_conf_t)
+
+manage_dirs_pattern(aittcoin_t, aittcoin_var_lib_t, aittcoin_var_lib_t)
+manage_files_pattern(aittcoin_t, aittcoin_var_lib_t, aittcoin_var_lib_t)
+files_var_lib_filetrans(aittcoin_t, aittcoin_var_lib_t, { dir file })
+
+manage_dirs_pattern(aittcoin_t, aittcoin_var_run_t, aittcoin_var_run_t)
+manage_files_pattern(aittcoin_t, aittcoin_var_run_t, aittcoin_var_run_t)
+
+sysnet_dns_name_resolve(aittcoin_t)
+corenet_all_recvfrom_unlabeled(aittcoin_t)
+
+allow aittcoin_t self:tcp_socket create_stream_socket_perms;
+corenet_tcp_sendrecv_generic_if(aittcoin_t)
+corenet_tcp_sendrecv_generic_node(aittcoin_t)
+corenet_tcp_sendrecv_all_ports(aittcoin_t)
+corenet_tcp_bind_generic_node(aittcoin_t)
+
+gen_require(`
+    type aittcoin_port_t;
+')
+allow aittcoin_t aittcoin_port_t:tcp_socket name_bind;
+
+gen_require(`
+    type aittcoin_port_t;
+')
+allow aittcoin_t aittcoin_port_t:tcp_socket name_connect;
+
+domain_use_interactive_fds(aittcoin_t)
+
+files_read_etc_files(aittcoin_t)
+
+miscfiles_read_localization(aittcoin_t)
+
+sysnet_dns_name_resolve(aittcoin_t)
+
+allow aittcoin_t aittcoin_exec_t:file execute_no_trans;
+allow aittcoin_t self:process setsched;
+corecmd_exec_ls(aittcoin_t)
+corenet_tcp_connect_http_port(aittcoin_t)
+dev_read_urand(aittcoin_t)
+fs_getattr_xattr_fs(aittcoin_t)
+kernel_read_system_state(aittcoin_t)

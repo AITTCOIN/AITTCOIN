@@ -1,0 +1,6 @@
+usr/local/bin/aittcoin-qt usr/bin
+share/pixmaps/aittcoin32.xpm usr/share/pixmaps
+share/pixmaps/aittcoin16.xpm usr/share/pixmaps
+share/pixmaps/aittcoin128.png usr/share/pixmaps
+debian/aittcoin-qt.desktop usr/share/applications
+debian/aittcoin-qt.protocol usr/share/kde4/services/
