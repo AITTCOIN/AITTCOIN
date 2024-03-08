@@ -128,5 +128,5 @@ cmake-build-debug
 CMakeLists.txt
 1.sh
 community/
-assets/
+
 .pydevproject
