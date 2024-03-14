@@ -1,6 +1,7 @@
-[![Video Thumbnail](https://github.com/AITTCOIN/AITTCOIN/assets/161400084/14b4348f-9381-48bc-9b43-087a80f1568e)](https://github.com/AITTCOIN/AITTCOIN/assets/161400084/8ec4be87-5901-4b00-bf68-fb3c85730937)
+![AITT](https://github.com/AITTCOIN/AITTCOIN/assets/161400084/a01e8144-75db-443b-b390-f8c68d6fdc26)
 
 ## The Artificial Intelligence Transaction Token (AITT)
+
 
 • Symbol: AITT
 
@@ -48,3 +49,15 @@ https://pool.aittcoin.org/getting_started
     mining.pool.aittcoin.org:10016 mid difficulty for 2-4 GPUs (30Mh/s-60Mh/s)
     
     mining.pool.aittcoin.org:10032 high difficulty for 4-8 Gpus (>60Mh/s)
+
+# AITT Social Media
+
+X(Twitter):https://twitter.com/AITTCOIN
+
+Telegram:https://t.me/AITTCOIN
+
+Telegram Group:https://t.me/AITTCOIN_ORG
+
+Discord:https://discord.gg/M5dCUqRg
+
+Youtube:https://www.youtube.com/@AITTCOIN_OFFICIAL
