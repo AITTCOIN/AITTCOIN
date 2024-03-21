@@ -15,6 +15,8 @@
 #include <memory>
 #include <vector>
 
+uint32_t GetKAWPOWActivationTime();
+
 struct CDNSSeedData {
     std::string host;
     bool supportsServiceBitsFiltering;
@@ -37,6 +39,7 @@ struct ChainTxData {
     int64_t nTxCount;
     double dTxRate;
 };
+
 
 /**
  * CChainParams defines various tweakable parameters of a given instance of the
