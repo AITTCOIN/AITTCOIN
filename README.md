@@ -58,6 +58,6 @@ Telegram:https://t.me/AITTCOIN
 
 Telegram Group:https://t.me/AITTCOIN_ORG
 
-Discord:https://discord.gg/M5dCUqRg
+Discord:[https://discord.gg/M5dCUqRg](https://discord.gg/RhANYYejM5)
 
 Youtube:https://www.youtube.com/@AITTCOIN_OFFICIAL
