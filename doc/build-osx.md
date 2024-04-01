@@ -46,7 +46,7 @@ from the root of the repository.
 
 1. Clone the AITTCoin Core source code:
     ```shell
-    git clone https://github.com/AITTCoinProject/AITTCOIN
+    git clone https://github.com/AITTCOIN/AITTCOIN
     cd AITTCOIN
     ```
 

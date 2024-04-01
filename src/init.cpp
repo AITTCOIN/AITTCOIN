@@ -629,7 +629,7 @@ std::string HelpMessage(HelpMessageMode mode)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/AITTCoinProject/AITTCOIN>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/AITTCOIN/AITTCOIN>";
     const std::string URL_WEBSITE = "<https://AITTCOIN.org>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i"), 2009, COPYRIGHT_YEAR) + " ") + "\n" +

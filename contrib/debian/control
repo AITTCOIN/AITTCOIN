@@ -28,7 +28,7 @@ Build-Depends: debhelper,
 Standards-Version: 3.9.2
 Homepage: https://AITTCOIN.org/
 Vcs-Git: git://github.com/AITTCoinProject/AITTCOIN.git
-Vcs-Browser: https://github.com/AITTCoinProject/AITTCOIN
+Vcs-Browser: https://github.com/AITTCOIN/AITTCOIN
 
 Package: aittcoind
 Architecture: any

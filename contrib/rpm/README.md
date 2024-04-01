@@ -19,7 +19,7 @@ reference the release tarball available from https://aittcoin.org/bin/ and
 `Source1` should reference the BerkeleyDB source.
 
 Sources 10-99 are for source files that are maintained in the
-[AITTCoin git repository](https://github.com/AITTCoinProject/AITTCOIN) but are not part of
+[AITTCoin git repository](https://github.com/AITTCOIN/AITTCOIN) but are not part of
 the release tarball. Most of these will reside in the `contrib` sub-directory.
 
 Sources 10-19 should be reserved for miscellaneous configuration files.

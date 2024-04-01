@@ -29,7 +29,7 @@ cd ~/
 # Removes any existing builds and starts clean WARNING
 rm -rf ~/AITTCOIN ~/sign ~/release
 
-git clone https://github.com/aittcoinproject/AITTCOIN
+git clone https://github.com/AITTCOIN/AITTCOIN
 cd ~/AITTCOIN
 git checkout $BRANCH
 

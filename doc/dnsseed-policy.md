@@ -51,4 +51,4 @@ situations but should be discussed in public in advance.
 
 See also
 ----------
-- [AITTCOIN-seeder](https://github.com/AITTCoinProject/AITTCOIN-seeder) is a reference implementation of a DNS seed.
+- [AITTCOIN-seeder](https://github.com/AITTCOIN/AITTCOIN-seeder) is a reference implementation of a DNS seed.

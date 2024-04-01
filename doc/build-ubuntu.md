@@ -148,7 +148,7 @@ Make the directory for sources and go into it.
 
 __Download AITTCOIN source.__
 
-`git clone https://github.com/AITTCoinProject/AITTCOIN`
+`git clone https://github.com/AITTCOIN/AITTCOIN`
 
 `cd AITTCOIN`
 
