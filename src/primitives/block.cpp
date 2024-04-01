@@ -18,10 +18,11 @@
 
 
 
-extern uint32_t GetKAWPOWActivationTime();
+// extern uint32_t GetKAWPOWActivationTime();
 
-uint32_t nKAWPOWActivationTime=GetKAWPOWActivationTime() ;
+// uint32_t nKAWPOWActivationTime=GetKAWPOWActivationTime() ;
 
+uint32_t nKAWPOWActivationTime=1709274851;
 BlockNetwork bNetwork = BlockNetwork();
 
 BlockNetwork::BlockNetwork()
