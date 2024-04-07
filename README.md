@@ -27,7 +27,9 @@
 
 ### Official Mining Pool
 
-https://pool.aittcoin.org/stats/aittcoin
+https://pool.aittcoin.org/
+
+https://solo.aittcoin.org/
 
 #### Gminer
 
@@ -40,15 +42,12 @@ kawpowminer.exe -P stratum+tcp://AekmpQ4gQm6EmfUAJv2AKBReMuenYTZT2y.test1@mining
 
 #### Trex-Miner & Team-Red-Miner
 
-https://pool.aittcoin.org/getting_started
+
 
 #### Mining Pool ports setting
     
     mining.pool.aittcoin.org:10008 low difficulty for 1-2 GPUs (30Mh/s)
     
-    mining.pool.aittcoin.org:10016 mid difficulty for 2-4 GPUs (30Mh/s-60Mh/s)
-    
-    mining.pool.aittcoin.org:10032 high difficulty for 4-8 Gpus (>60Mh/s)
 
 # AITT Social Media
 
