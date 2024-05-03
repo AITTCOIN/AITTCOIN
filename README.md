@@ -1,4 +1,5 @@
-![AITT](https://github.com/AITTCOIN/AITTCOIN/assets/161400084/a01e8144-75db-443b-b390-f8c68d6fdc26)
+![AITTCOIN](https://github.com/AITTCOIN/AITTCOIN/assets/161400084/1fb24eaa-4fce-44b2-bece-e1aa6df06d01)
+
 
 ## The Artificial Intelligence Transaction Token (AITT)
 
