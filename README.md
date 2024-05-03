@@ -47,7 +47,8 @@ kawpowminer.exe -P stratum+tcp://AekmpQ4gQm6EmfUAJv2AKBReMuenYTZT2y.test1@mining
 
 #### Mining Pool ports setting
     
-    mining.pool.aittcoin.org:10008 low difficulty for 1-2 GPUs (30Mh/s)
+    mining.pool.aittcoin.org:10008 for PPLNS mining
+    solo.pool.aittcoin.org:20008 for SOLO mining
     
 
 # AITT Social Media
