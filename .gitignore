@@ -3,6 +3,7 @@ Jenkinsfile
 *.tar.gz
 bin/
 depends
+depends_linux
 xbuild_scripts/
 *.exe
 src/aittcoin
