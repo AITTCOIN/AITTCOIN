@@ -10,7 +10,7 @@
 #include "tinyformat.h"
 #include "utilstrencodings.h"
 #include "crypto/common.h"
-
+#include "chainparams.h"
 
 // static const uint32_t MAINNET_X16RV2ACTIVATIONTIME = 1569945600;
 // static const uint32_t TESTNET_X16RV2ACTIVATIONTIME = 1567533600;
@@ -20,9 +20,10 @@
 
 // extern uint32_t GetKAWPOWActivationTime();
 
-// uint32_t nKAWPOWActivationTime=GetKAWPOWActivationTime() ;
+uint32_t nKAWPOWActivationTime=GetKAWPOWActivationTime() ;
 
-uint32_t nKAWPOWActivationTime=1709274851;
+// uint32_t nKAWPOWActivationTime=1709274851;
+
 BlockNetwork bNetwork = BlockNetwork();
 
 BlockNetwork::BlockNetwork()

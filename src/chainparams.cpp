@@ -182,10 +182,11 @@ public:
 
 
         // The best chain should have at least this much work
-        consensus.nMinimumChainWork = uint256S("000000000000000000000000000000000000000000000000021e5df647bf3c6c"); //100000
+
+        consensus.nMinimumChainWork = uint256S("0000000000000000000000000000000000000000000000000905efe1388358b9"); // #600000
 
         // By default assume that the signatures in ancestors of this block are valid. Block# 1040000
-        consensus.defaultAssumeValid = uint256S("000000000015de96c972b865ef22795e6590a1adc9504f4db1f90bb3e6e80429"); // 100000
+        consensus.defaultAssumeValid = uint256S("0000000000c7f8267e7a35fed0818c1209bbd69b6b76521c2641bab224031496"); // #524160 1st halving
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -245,15 +246,16 @@ public:
                  {15000,uint256S("00000003901305ea920e906f193565c5381eb03ac6915513329cdef197bc79ee")},
                  {20000,uint256S("00000004306ba064ffe3f8266703ec38d52d146a8c9769fded1cd4b8dd2b487b")},
                  {30000,uint256S("00000001139bb7b9e829a13ee88026a2d89d95fbaac9e2e77120a0134c8fe90c")},
-                 {100000,uint256S("000000000015de96c972b865ef22795e6590a1adc9504f4db1f90bb3e6e80429")},       
+                 {524160,uint256S("0000000000c7f8267e7a35fed0818c1209bbd69b6b76521c2641bab224031496")},
+                 {600000,uint256S("00000000008580f0b85169a7f29ae2e611696f32dba81944947c70bc68780a39")},
             }};
 
         // previously set at 6709969 txns by time 1577939273 ==>
         chainTxData = ChainTxData{
-            1710909531, // * UNIX timestamp of last known number of transactions
-            114180, // * total number of transactions between genesis and that timestamp
+            1719209943, // * UNIX timestamp of last known number of transactions
+            706295, // * total number of transactions between genesis and that timestamp
                //   (the tx=... number in the SetBestChain debug.log lines)
-            0  // * estimated number of transactions per second after that timestamp
+            0.2  // * estimated number of transactions per second after that timestamp
         };
 
         /** AITT Start **/
