@@ -110,12 +110,7 @@ bool CChainParams::CSVEnabled() const
 {
     return consensus.nCSVEnabled;
 }
-/**
- * Return the KAWPOW active time
-*/
-uint32_t GetKAWPOWActivationTime() {
-    return nKAWPOWActivationTime;
-}
+
 
 /**
  * Main network

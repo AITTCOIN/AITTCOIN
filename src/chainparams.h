@@ -15,8 +15,6 @@
 #include <memory>
 #include <vector>
 
-uint32_t GetKAWPOWActivationTime();
-
 struct CDNSSeedData {
     std::string host;
     bool supportsServiceBitsFiltering;
@@ -39,7 +37,6 @@ struct ChainTxData {
     int64_t nTxCount;
     double dTxRate;
 };
-
 
 /**
  * CChainParams defines various tweakable parameters of a given instance of the
@@ -145,6 +142,8 @@ public:
     int MinReorganizationAge() const { return nMinReorganizationAge; }
 
     int GetAssetActivationHeight() const { return nAssetActivationHeight; }
+    uint32_t GetKAWPOWActivationTime() const { return nKAWPOWActivationTime;}
+
     /** AITT End **/
 
 protected:
