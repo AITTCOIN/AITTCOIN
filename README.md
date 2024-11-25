@@ -26,12 +26,10 @@
 
 • Mining Algorithm: KAWPOW to resist ASIC
 
-### Official Mining Pool
+### Mining Pools
 
-https://pool.aittcoin.org/
-
-https://solo.aittcoin.org/
-
+https://miningpoolstats.stream/aittcoin
+ 
 #### Gminer
 
 miner.exe –algo kawpow –server mining.pool.aittcoin.org:10008 –user AekmpQ4gQm6EmfUAJv2AKBReMuenYTZT2y –proto stratum
